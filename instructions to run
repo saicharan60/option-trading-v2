@@ -1,0 +1,24 @@
+unzip marketlens_upstox_scanner_v2.zip
+cd marketlens_upstox_scanner_v2
+
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+cp .env.example .env
+
+Edit .env:
+
+UPSTOX_ACCESS_TOKEN=YOUR_ANALYTICS_TOKEN
+
+Then test:
+
+python test_connection.py
+
+If that succeeds:
+
+python scanner.py
+
+Or launch the dashboard:
+
+streamlit run app.py
